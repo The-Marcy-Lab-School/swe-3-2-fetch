@@ -1,6 +1,7 @@
 import { describe, it, expect, afterEach, afterAll, beforeEach, vi } from 'vitest';
 
-import app from '../src/app';
+import { setupPageBasics } from './setupPageForTests.js'
+import { main } from '../src/main.js';
 import ScoreCounter from 'score-tests';
 import path from 'path';
 import nock from 'nock';
@@ -28,9 +29,10 @@ describe(testSuiteName, () => {
     nock(baseUrl).persist().get('/users').reply(200, users);
 
     const builtApp = document.createElement('div');
-    app(builtApp);
+    setupPageBasics(builtApp);
+    main(builtApp);
+    await waitForRenders();
 
-    await waitForRenders()
     expect(builtApp.querySelector('#status-heading').textContent)
       .toBe(`Info on - https://jsonplaceholder.typicode.com/users`);
     expect(builtApp.querySelector('#status-code').textContent)
@@ -48,7 +50,8 @@ describe(testSuiteName, () => {
     nock(baseUrl).persist().get('/users').reply(200, users);
 
     const builtApp = document.createElement('div');
-    app(builtApp);
+    setupPageBasics(builtApp);
+    main(builtApp);
     await waitForRenders()
 
     const liTags = builtApp.querySelectorAll('li');
@@ -84,7 +87,8 @@ describe(testSuiteName, () => {
     nock(baseUrl).get(`/users/${userId}/posts`).reply(200, posts);
 
     const builtApp = document.createElement('div');
-    app(builtApp);
+    setupPageBasics(builtApp);
+    main(builtApp);
     await waitForRenders()
 
     const liTags = builtApp.querySelectorAll('#posts-list li');
@@ -123,7 +127,10 @@ describe(testSuiteName, () => {
     nock(baseUrl).post('/users', newUserFormData).reply(200, newUser);
 
     const builtApp = document.createElement('div');
-    app(builtApp);
+    setupPageBasics(builtApp);
+    main(builtApp);
+    await waitForRenders()
+
     const emptyNewUserDiv = builtApp.querySelector('#new-user');
     expect(emptyNewUserDiv.children.length).toBe(0);
 

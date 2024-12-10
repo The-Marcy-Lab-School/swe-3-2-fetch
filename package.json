@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "dev:aws": "vite --port $PORT",
-    "test": "vitest run",
-    "test:w": "vitest",
+    "test": "NODE_NO_WARNINGS=1 vitest run",
+    "test:w": "NODE_NO_WARNINGS=1 vitest",
     "build": "vite build",
     "preview": "vite preview"
   },

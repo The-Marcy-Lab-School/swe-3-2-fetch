@@ -40,16 +40,16 @@ describe(testSuiteName, () => {
       });
   });
 
-  it('checkResponseStatus', () => {
+  it('checkResponseStatus', async () => {
     nock(baseUrl).get('/users').reply(202);
-    expect(checkResponseStatus()).resolves.toEqual({
+    await expect(checkResponseStatus()).resolves.toEqual({
       ok: true,
       status: 202,
       url: usersUrl,
     })
 
     nock(baseUrl).get('/users').reply(500)
-    expect(checkResponseStatus()).resolves.toEqual({
+    await expect(checkResponseStatus()).resolves.toEqual({
       ok: false,
       status: 500,
       url: usersUrl,
@@ -71,7 +71,7 @@ describe(testSuiteName, () => {
       });
   });
 
-  it('getUsers - returns the users', () => {
+  it('getUsers - returns the users', async () => {
     const users = [
       { id: 1, username: 'Leanne_Graham' },
       { id: 2, username: 'Ervin_Howell' },
@@ -79,7 +79,7 @@ describe(testSuiteName, () => {
     ];
 
     nock(baseUrl).get('/users').reply(200, users);
-    expect(getUsers()).resolves.toEqual(users);
+    await expect(getUsers()).resolves.toEqual(users);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
