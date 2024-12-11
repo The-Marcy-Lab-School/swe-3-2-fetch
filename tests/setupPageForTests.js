@@ -1,6 +1,6 @@
 
-export const setupPageBasics = (parentEl) => {
-  parentEl.innerHTML = `
+export const setupPageBasics = (document) => {
+  document.body.innerHTML = `
     <h1>Intro To Fetch!</h1>
     <div id='status'></div>
     <div id='users'>

@@ -15,10 +15,10 @@
     "FeFuTe6": "tests/fetch-functions.spec.js > Fetch Function Tests > getUserPosts - only returns the first 3 posts",
     "FeFuTe7": "tests/fetch-functions.spec.js > Fetch Function Tests > createNewUser - returns a promise and fetches the right url",
     "FeFuTe8": "tests/fetch-functions.spec.js > Fetch Function Tests > createNewUser - returns the new user",
-    "ApTe1": "tests/app.spec.js > App Tests > app - renders the right status",
-    "ApTe2": "tests/app.spec.js > App Tests > app - renders the right users",
-    "ApTe3": "tests/app.spec.js > App Tests > app - only renders posts once a button has been clicked",
-    "ApTe4": "tests/app.spec.js > App Tests > app - creates and renders a new user on form submission",
+    "ApTe1": "tests/main.spec.js > App Tests > app - renders the right status",
+    "ApTe2": "tests/main.spec.js > App Tests > app - renders the right users",
+    "ApTe3": "tests/main.spec.js > App Tests > app - only renders posts once a button has been clicked",
+    "ApTe4": "tests/main.spec.js > App Tests > app - creates and renders a new user on form submission",
     "ReFuTe8": "tests/render-functions.spec.js > Render Functions Tests > renderNewUser - clears the html each time so multiple calls don't duplicate users"
   },
   "testNameToIdHash": {
@@ -62,7 +62,11 @@
     "tests/app.spec.js > App Tests > app - renders the right status": "ApTe1",
     "tests/app.spec.js > App Tests > app - renders the right users": "ApTe2",
     "tests/app.spec.js > App Tests > app - only renders posts once a button has been clicked": "ApTe3",
-    "tests/app.spec.js > App Tests > app - creates and renders a new user on form submission": "ApTe4"
+    "tests/app.spec.js > App Tests > app - creates and renders a new user on form submission": "ApTe4",
+    "tests/main.spec.js > App Tests > app - renders the right status": "ApTe1",
+    "tests/main.spec.js > App Tests > app - renders the right users": "ApTe2",
+    "tests/main.spec.js > App Tests > app - only renders posts once a button has been clicked": "ApTe3",
+    "tests/main.spec.js > App Tests > app - creates and renders a new user on form submission": "ApTe4"
   },
   "testScores": {
     "Render Functions Tests": {

@@ -13,16 +13,17 @@ import {
   renderNewUser,
 } from './render-functions.js';
 
-export const main = (container) => {
+export const main = () => {
   // Pass these variables to your rendering functions in part 2
-  const statusDiv = container.querySelector('#status');
-  const usersUl = container.querySelector('#users-list');
-  const postsUl = container.querySelector('#posts-list');
-  const newUserForm = container.querySelector('#new-user-form');
-  const newUserDiv = container.querySelector('#new-user');
+  const statusDiv = document.querySelector('#status');
+  const postsUl = document.querySelector('#posts-list');
+  const usersUl = document.querySelector('#users-list');
+  const newUserForm = document.querySelector('#new-user-form');
+  const newUserDiv = document.querySelector('#new-user');
 
-  // Below, we've provided code to test the output of your functions
-  // Each function should return a Promise.
+  // Below, we've provided code to test the output of your fetching functions.
+  // Feel free to use it by uncommenting it. You can delete it after (or not)
+  // Each function should return a Promise and then we print the resolved value.
 
   // checkResponseStatus()
   //   .then((statusInfo) => {
@@ -34,7 +35,7 @@ export const main = (container) => {
   //     console.log('users:', users)
   //   });
 
-  // getUserPosts(1, 5)
+  // getUserPosts(1)
   //   .then((posts) => {
   //     console.log('posts:', posts)
   //   });
@@ -43,12 +44,9 @@ export const main = (container) => {
   //   .then((newUser) => {
   //     console.log('newUser:', newUser)
   //   });
+
+  // TODO: Add your code for part 2 here!
+
 }
 
-// Note: This is not how you would ordinarily invoke main(). We have to include this for our tests to run properly. DO NOT CHANGE THIS
-if (window.process?.env) {
-  // When running tests in Node, do not invoke main
-} else {
-  // When running the program in the browser, DO invoke main
-  main(document);
-}
+main();

@@ -104,7 +104,8 @@ We know you may know how to use `async/await` syntax already, but we're going to
 
 In this assignment we're going to use the free, open source, practice API https://jsonplaceholder.typicode.com. We're going to use the users and posts endpoints to list users, list a users posts, and then create a (fake) new user! We'll also practice rendering our results.
 
-First things first, we need to fetch our data. We'll do this in the functions found in `src/fetch-functions.js`. These are all imported into `src/main.js` where we are logging the results of these functions. Notice that each function returns a Promise so we are using `.then()` calls to print out their resolved values. Uncomment these function calls as you test them.
+First things first, we need to fetch our data. We'll do this in the functions found in `src/fetch-functions.js`. These are all imported into `src/main.js` where we are logging the results of these functions. Notice that each function returns a Promise so we are using `.then()` calls to print out their resolved values. 
+
 
 ```js
 checkResponseStatus()
@@ -113,7 +114,7 @@ checkResponseStatus()
   });
 ```
 
-To see the output of these `console.log` statements, run the project's Vite server and view the console:
+Uncomment these function calls to see what your fetching functions return. To see the output of these `console.log` statements, run the project's Vite server and view the console:
 
 ```
 npm run dev
