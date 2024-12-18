@@ -398,7 +398,7 @@ So this is a crucial question: can you just set the `innerHTML` or do you need t
 
 For this last one, you are challenged to think through how to put together your fetching and rendering code. In the end, you should have the following functionality:
 
-- When we submit the form, we should send a POST request to the JSON Placeholder API to create a new user. We'll get back a user object.
+- When we submit the form, we should take the form data to construct a `{ username, email }` object to send in a POST request to the JSON Placeholder API to create a new user. We'll get back a user object that has the same data plus an `id`.
 - After submitting the form, we should then see the username and email appear on the screen below in the area under the form (see the `div#new-user` element)
 - After submitting the form, the form clears itself
 - We can fill out the form as many times as we like, and the new user section will only show the latest user
